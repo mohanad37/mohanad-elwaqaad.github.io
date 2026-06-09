@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohanad El-Waqaad — Structural Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0e1118;--bg2:#141820;--bg3:#1c2230;--gold:#c8a96e;--gold2:#a08550;--off:#e8e4dc;--muted:#7a8a9a;--border:rgba(200,169,110,0.15);--borderw:rgba(255,255,255,0.06)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--off);font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(14,17,24,0.93);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--borderw)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.2em;color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 380px;padding-top:74px;border-bottom:0.5px solid var(--borderw)}
+.hero-bg-text{position:fixed;font-family:'Bebas Neue',sans-serif;font-size:28vw;color:rgba(255,255,255,.015);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none;letter-spacing:.05em;z-index:0;white-space:nowrap}
+.hero-left{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
+.tag::before{content:'';display:block;width:36px;height:1px;background:var(--gold)}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,9vw,110px);line-height:.9;letter-spacing:.02em;margin-bottom:1rem}
+h1 span{color:var(--gold);display:block}
+.subtitle{font-family:'DM Serif Display',serif;font-style:italic;font-size:20px;color:var(--muted);margin-bottom:2rem}
+.desc{font-size:15px;color:var(--muted);line-height:1.95;max-width:440px;margin-bottom:2.5rem;padding-left:1.25rem;border-left:2px solid var(--gold)}
+.cta{display:flex;gap:1rem}
+.btn{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding:.85rem 2rem;border-radius:2px;text-decoration:none;transition:all .2s;cursor:pointer;border:none;display:inline-block}
+.btn-p{background:var(--gold);color:#0e1118}
+.btn-p:hover{background:#d4b87a}
+.btn-o{background:transparent;color:var(--off);border:.5px solid rgba(255,255,255,.25)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.hero-right{display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;border-left:.5px solid var(--borderw);gap:1rem;position:relative;z-index:1;background:rgba(20,24,32,.5)}
+.stat{padding:1.5rem;background:rgba(255,255,255,.03);border:.5px solid var(--borderw);border-radius:3px;transition:border-color .2s}
+.stat:hover{border-color:var(--border)}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--gold);letter-spacing:.05em;line-height:1}
+.stat-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.divider{height:.5px;background:var(--borderw);margin:.5rem 0}
+.contacts{display:flex;flex-direction:column;gap:8px}
+.c-row{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.c-row::before{content:'→';color:var(--gold);font-size:12px}
+.c-row a{color:var(--muted);text-decoration:none;transition:color .2s}
+.c-row a:hover{color:var(--gold)}
+section{padding:6rem 4rem;border-top:.5px solid var(--borderw)}
+.sec-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,5vw,66px);letter-spacing:.04em;line-height:1;margin-bottom:3.5rem}
+.exp-item{display:grid;grid-template-columns:190px 1fr;gap:0 3rem;padding:2.5rem 0;border-bottom:.5px solid var(--borderw)}
+.exp-item:first-child{border-top:.5px solid var(--borderw)}
+.exp-period{font-size:12px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.exp-co{font-size:13px;color:var(--muted);line-height:1.5}
+.exp-role{font-family:'DM Serif Display',serif;font-size:21px;color:var(--off);margin-bottom:.75rem}
+.exp-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:1.25rem}
+.projs{display:flex;flex-direction:column;gap:8px}
+.proj-row{font-size:13px;color:var(--muted);padding:10px 14px;background:rgba(255,255,255,.025);border-left:2px solid var(--gold);border-radius:2px;line-height:1.6}
+.proj-row strong{color:var(--off);font-weight:500}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--borderw);border:.5px solid var(--borderw);border-radius:4px;overflow:hidden}
+.pc{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background .2s}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pc:hover{background:rgba(200,169,110,.04)}
+.pc:hover::before{transform:scaleX(1)}
+.pw{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);letter-spacing:.05em;line-height:1;margin-bottom:4px}
+.pn{font-size:14px;font-weight:500;color:var(--off);margin-bottom:4px}
+.pl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pd{font-size:13px;color:var(--muted);line-height:1.7}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.sw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.sw{display:flex;align-items:center;gap:10px;padding:11px 14px;background:rgba(255,255,255,.03);border:.5px solid var(--borderw);border-radius:3px;font-size:13px;transition:border-color .2s}
+.sw:hover{border-color:var(--border)}
+.sw-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag-item{padding:7px 16px;border:.5px solid var(--border);border-radius:2px;font-size:12px;letter-spacing:.07em;color:var(--off);text-transform:uppercase}
+.sub{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.edu-card{padding:1.75rem;border:.5px solid var(--borderw);border-radius:4px;background:rgba(255,255,255,.02);margin-bottom:1.5rem}
+.edu-yr{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.edu-deg{font-family:'DM Serif Display',serif;font-size:20px;color:var(--off);margin-bottom:6px}
+.edu-sch{font-size:14px;color:var(--muted);margin-bottom:10px}
+.badge{display:inline-block;padding:5px 12px;background:rgba(200,169,110,.1);border:.5px solid var(--border);border-radius:2px;font-size:12px;color:var(--gold);letter-spacing:.05em}
+.course-list{display:flex;flex-direction:column;gap:8px}
+.course{display:flex;justify-content:space-between;align-items:flex-start;padding:11px 14px;border:.5px solid var(--borderw);border-radius:3px;gap:1rem}
+.course-n{font-size:13px;color:var(--off)}
+.course-y{font-size:11px;color:var(--gold);white-space:nowrap;flex-shrink:0}
+.contact-sec{background:rgba(200,169,110,.03)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,6vw,82px);letter-spacing:.03em;line-height:1;margin-bottom:1rem}
+.contact-big span{color:var(--gold)}
+.contact-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:17px;color:var(--muted);margin-bottom:2rem}
+.c-items{display:flex;flex-direction:column;gap:.75rem}
+.c-item{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem;border:.5px solid var(--borderw);border-radius:3px;background:rgba(255,255,255,.02);text-decoration:none;color:var(--muted);font-size:14px;transition:all .2s}
+.c-item:hover{border-color:var(--border);color:var(--off)}
+.c-icon{width:30px;height:30px;background:rgba(200,169,110,.1);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold);flex-shrink:0}
+footer{padding:1.75rem 4rem;border-top:.5px solid var(--borderw);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:12px;color:var(--muted);letter-spacing:.06em}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.tag{animation:fadeUp .6s ease .1s both}
+h1{animation:fadeUp .6s ease .22s both}
+.subtitle{animation:fadeUp .6s ease .32s both}
+.desc{animation:fadeUp .6s ease .42s both}
+.cta{animation:fadeUp .6s ease .52s both}
+@media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{gap:1.5rem}.hero{grid-template-columns:1fr}.hero-right{border-left:none;border-top:.5px solid var(--borderw);flex-direction:row;flex-wrap:wrap}.hero-left,.hero-right{padding:3rem 1.5rem}section{padding:4rem 1.5rem}.exp-item{grid-template-columns:1fr;gap:.5rem}.proj-grid{grid-template-columns:1fr 1fr}.skills-wrap,.edu-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
+</style>
+</head>
+<body>
+<div class="hero-bg-text">STEEL</div>
+<nav>
+  <div class="nav-logo">M.ELWAQAAD</div>
+  <ul class="nav-links">
+    <li><a href="#exp">Experience</a></li>
+    <li><a href="#proj">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#edu">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <p class="tag">Structural Engineer — Cairo, Egypt</p>
+    <h1>MOHANAD<span>EL-WAQAAD</span></h1>
+    <p class="subtitle">Steel Structural Design Engineer</p>
+    <p class="desc">Transforming complex engineering concepts into simplified, executable designs — combining technical rigor with innovative problem-solving across international industrial projects.</p>
+    <div class="cta">
+      <a href="#proj" class="btn btn-p">View Projects</a>
+      <a href="#contact" class="btn btn-o">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years in Structural Design</div></div>
+    <div class="stat"><div class="stat-n">6+</div><div class="stat-l">International Projects</div></div>
+    <div class="stat"><div class="stat-n">83.6%</div><div class="stat-l">GPA — Very Good with Honors</div></div>
+    <div class="divider"></div>
+    <div class="contacts">
+      <div class="c-row"><a href="mailto:mohannd.talat@gmail.com">mohannd.talat@gmail.com</a></div>
+      <div class="c-row"><a href="tel:+201099294744">(+2) 0109 929 4744</a></div>
+      <div class="c-row"><a href="https://linkedin.com/in/mohanad-el-waqaad" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+</div>
+<section id="exp">
+  <p class="sec-label">Work History</p>
+  <h2 class="sec-title">Experience</h2>
+  <div>
+    <div class="exp-item">
+      <div><p class="exp-period">07/2025 – Present</p><p class="exp-co">AIC Steel</p></div>
+      <div>
+        <h3 class="exp-role">Technical Sales Engineer</h3>
+        <p class="exp-desc">Reviewing structural drawings and specifications for technical feasibility. Providing value engineering solutions to optimize steel weight and reduce costs. Acting as a technical bridge between clients and design departments, preparing detailed technical proposals and conducting site inspections.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div><p class="exp-period">06/2024 – 07/2025</p><p class="exp-co">Zamil Steel Holding Company</p></div>
+      <div>
+        <h3 class="exp-role">Steel Structural Engineer</h3>
+        <p class="exp-desc">Designed steel warehouses, industrial buildings, and complex structures. Conducted structural analysis using SAP2000, ASFAD, EZ-Connection, and IDEA StatiCa. Prepared design calculations, drawings, and estimate sheets ensuring compliance with local and international codes.</p>
+        <div class="projs">
+          <div class="proj-row"><strong>MILTTEKES EGYPT (1,200t)</strong> — Multi-span + full mezzanine + jack beams. W:66.5m × H:13.75m — 6th of October</div>
+          <div class="proj-row"><strong>CRS Factory (950t)</strong> — Multi-span + full mezzanine. W:65m × H:11m — Port Said Free Zone</div>
+          <div class="proj-row"><strong>Warehouse (550t)</strong> — Multi-Gable. W:72m × H:12m + 10t crane @+9m — Oran, Algeria</div>
+          <div class="proj-row"><strong>MOKAFHA Buildings (140t)</strong> — Clear-span. W:50m × H:8m — Benghazi, Libya</div>
+          <div class="proj-row"><strong>Office Building (90t)</strong> — Multi-story. 20×24m × H:11m — Lomé, Togo</div>
+          <div class="proj-row"><strong>ALKBOUS INDUSTRIAL (55t)</strong> — Clear-span + skewed end wall. W:25m × H:8m — Amman, Jordan</div>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div><p class="exp-period">11/2022 – 06/2023</p><p class="exp-co">Crown Group Co.</p></div>
+      <div>
+        <h3 class="exp-role">Steel Structural Engineer</h3>
+        <p class="exp-desc">Designed steel supports, buildings, and pipe racks. Handled material selection, detailing, and efficient fabrication and erection processes using SAP2000 and IDEA StatiCa.</p>
+        <div class="projs"><div class="proj-row"><strong>Canal Sugar Project</strong> — Largest agricultural project in Egypt since 1952. ~790 km² integrated agri-industrial development.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="proj">
+  <p class="sec-label">Key Deliverables</p>
+  <h2 class="sec-title">Projects</h2>
+  <div class="proj-grid">
+    <div class="pc"><div class="pw">1,200t</div><p class="pn">MILTTEKES EGYPT</p><p class="pl">6th of October, Egypt</p><p class="pd">Multi-span with full mezzanine & jack beams. W:66.5m / H:13.75m</p></div>
+    <div class="pc"><div class="pw">950t</div><p class="pn">CRS Factory</p><p class="pl">Port Said, Egypt</p><p class="pd">Multi-span factory with full mezzanine. W:65m / H:11m. Free zone.</p></div>
+    <div class="pc"><div class="pw">550t</div><p class="pn">Industrial Warehouse</p><p class="pl">Oran, Algeria</p><p class="pd">Multi-Gable. W:72m / H:12m with 10t overhead crane at +9m.</p></div>
+    <div class="pc"><div class="pw">140t</div><p class="pn">MOKAFHA Buildings</p><p class="pl">Benghazi, Libya</p><p class="pd">Clear-span structure. W:50m / H:8m. International delivery.</p></div>
+    <div class="pc"><div class="pw">90t</div><p class="pn">Office Building</p><p class="pl">Lomé, Togo</p><p class="pd">Multi-story steel. 20×24m plan / H:11m. West Africa.</p></div>
+    <div class="pc"><div class="pw">55t</div><p class="pn">ALKBOUS Industrial</p><p class="pl">Amman, Jordan</p><p class="pd">Clear-span + skewed end wall. W:25m / H:8m.</p></div>
+  </div>
+</section>
+<section id="skills">
+  <p class="sec-label">Capabilities</p>
+  <h2 class="sec-title">Skills</h2>
+  <div class="skills-wrap">
+    <div>
+      <p class="sub">Software & Tools</p>
+      <div class="sw-grid">
+        <div class="sw"><span class="sw-dot"></span>AutoCAD</div>
+        <div class="sw"><span class="sw-dot"></span>SAP2000</div>
+        <div class="sw"><span class="sw-dot"></span>TEKLA Structure</div>
+        <div class="sw"><span class="sw-dot"></span>IDEA StatiCa</div>
+        <div class="sw"><span class="sw-dot"></span>STAAD PRO</div>
+        <div class="sw"><span class="sw-dot"></span>Robot Structural</div>
+        <div class="sw"><span class="sw-dot"></span>RAM Connection</div>
+        <div class="sw"><span class="sw-dot"></span>LIMCON</div>
+        <div class="sw"><span class="sw-dot"></span>ASFAD / EZ-Connection</div>
+        <div class="sw"><span class="sw-dot"></span>MS Office</div>
+      </div>
+    </div>
+    <div>
+      <p class="sub">Professional Skills</p>
+      <div class="tags" style="margin-bottom:2rem">
+        <span class="tag-item">Leadership</span><span class="tag-item">Presentation</span><span class="tag-item">Problem Solving</span><span class="tag-item">Work Under Pressure</span><span class="tag-item">Eager to Learn</span><span class="tag-item">Adaptability</span><span class="tag-item">Value Engineering</span><span class="tag-item">Design Review</span>
+      </div>
+      <p class="sub">Languages</p>
+      <div class="tags">
+        <span class="tag-item">Arabic — Native</span><span class="tag-item">English — Advanced</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="edu">
+  <p class="sec-label">Academic & Training</p>
+  <h2 class="sec-title">Education</h2>
+  <div class="edu-grid">
+    <div>
+      <div class="edu-card">
+        <p class="edu-yr">2017 – 2022</p>
+        <h3 class="edu-deg">B.Sc. Civil Engineering</h3>
+        <p class="edu-sch">Tanta University — Civil Engineering Dept.</p>
+        <span class="badge">GPA 83.6% — Very Good with Honors</span>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">Graduation Project: Steel Structural Design of an Industrial Building — <span style="color:var(--gold)">Excellent</span></p>
+      </div>
+      <p class="sub">Field Training</p>
+      <div class="course-list">
+        <div class="course"><span class="course-n">QC Engineer — Dr. Hesham El Saudi (Redcon)</span><span class="course-y">2021</span></div>
+        <div class="course"><span class="course-n">Site Engineer — EMAAR</span><span class="course-y">2020</span></div>
+        <div class="course"><span class="course-n">Site Engineer — Details Co.</span><span class="course-y">2019</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="sub">Courses & Diplomas</p>
+      <div class="course-list">
+        <div class="course"><span class="course-n">Steel Structures Design Diploma — BENAA Academy</span><span class="course-y">2025–Now</span></div>
+        <div class="course"><span class="course-n">Steel Design Diploma — Eng. Omar Metwally</span><span class="course-y">2022</span></div>
+        <div class="course"><span class="course-n">Tekla Structure Detailing — Hoseny M. Gaber</span><span class="course-y">2022</span></div>
+        <div class="course"><span class="course-n">Tekla Structure Online — Eng. Abdallah Ali</span><span class="course-y">2022</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-sec">
+  <div class="contact-grid">
+    <div>
+      <p class="sec-label">Let's Connect</p>
+      <h2 class="contact-big">WORK<br><span>TOGETHER.</span></h2>
+      <p class="contact-sub">Available for structural design projects & collaborations.</p>
+    </div>
+    <div class="c-items">
+      <a href="mailto:mohannd.talat@gmail.com" class="c-item"><div class="c-icon">✉</div>mohannd.talat@gmail.com</a>
+      <a href="tel:+201099294744" class="c-item"><div class="c-icon">✆</div>(+2) 0109 929 4744</a>
+      <a href="tel:+201012089057" class="c-item"><div class="c-icon">✆</div>(+2) 0101 208 9057</a>
+      <a href="https://linkedin.com/in/mohanad-el-waqaad" target="_blank" class="c-item"><div class="c-icon">in</div>linkedin.com/in/mohanad-el-waqaad</a>
+      <div class="c-item" style="cursor:default"><div class="c-icon">📍</div>Cairo, Egypt</div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Mohanad El-Waqaad — Steel Structural Engineer</p>
+  <p>Cairo, Egypt © 2025</p>
+</footer>
+</body>
+</html>
